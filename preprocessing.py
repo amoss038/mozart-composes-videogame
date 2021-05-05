@@ -47,11 +47,11 @@ def prepare_notes():
     prepare the notes to be the input and output used by the network
     
     notes = note object created after parsing the midi files using M21
-    
     Output: The input and output sequences to the LSTM network
     
     '''
-    notes = notes_from_midi()
+    pickle_file = open("data/notes", "rb")
+    notes = pickle.load(pickle_file)
     #setting the sequence length to 100
     sequence = 100 
     
@@ -84,5 +84,5 @@ def prepare_notes():
     #one_hot_encoding lstm_ input
     lstm_output = to_categorical(lstm_output)
     
-    return (lstm_input, lstm_output)
+    return lstm_input, lstm_output
             
