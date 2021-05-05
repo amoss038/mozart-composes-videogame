@@ -42,7 +42,7 @@ def notes_from_midi():
         
     return notes
 
-def prepare_notes(notes):
+def prepare_notes():
     '''
     prepare the notes to be the input and output used by the network
     
