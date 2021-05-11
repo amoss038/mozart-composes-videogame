@@ -130,3 +130,13 @@ dmypy.json
 
 #midi files
 .midi_files
+.first_model.h5
+.first_train.h5
+.best_weights.hdf5
+
+first_model.h5
+first_train.h5
+best_weights.hdf5
+
+*.h5
+*.hdf5
