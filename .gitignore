@@ -140,3 +140,8 @@ best_weights.hdf5
 
 *.h5
 *.hdf5
+
+*.models_weights
+*.data
+
+
