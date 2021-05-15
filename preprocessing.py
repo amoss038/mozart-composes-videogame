@@ -7,7 +7,28 @@ import tensorflow as tf
 from tensorflow.keras.utils import to_categorical
 from music21 import converter, instrument, stream, note, chord
 
-
+#This function transposes all the songs to either cmaj or amin, so that the model does not have to learn every key
+def transpose_song(song):
+    
+    #get the key for the song   
+    parts = song.getElementsByClass(m21.stream.Part)
+    measure = parts[0].getElementsByClass(m21.stream.Measure)
+    #key = measure #### This might be working ... ? Can see the key within the music 21 object
+    
+    
+    #estimate the key using m21
+    key = song.analyze("key")
+        
+    #get the interval for the song to transpose by either major or minor
+    if key.mode == "major":
+        interval = m21.interval.Interval(key.tonic, m21.pitch.Pitch("C"))
+    elif key.mode == "minor":
+        interval = m21.interval.Interval(key.tonic, m21.pitch.Pitch("A"))
+        
+    transposed_song = song.transpose(interval)
+    
+    return transposed_song 
+        
 def notes_from_midi():
     #create a note objects off all notes, chords, and rests from midi files
     notes = []
@@ -47,12 +68,15 @@ def prepare_notes():
     prepare the notes to be the input and output used by the network
     
     notes = note object created after parsing the midi files using M21
+    
     Output: The input and output sequences to the LSTM network
     
     '''
-    pickle_file = open("data/notes", "rb")
+    
+    pickle_file = open("data/transposed_notes", "rb")
     notes = pickle.load(pickle_file)
     #setting the sequence length to 100
+    #print(len(set(notes)))
     sequence = 100 
     
     #creating all the unique notes for create the dictionary from
@@ -60,7 +84,7 @@ def prepare_notes():
     
     #creating the note to int dict to map pitches to integers
     note_dict = dict((note, number) for number, note in enumerate(pitches))
-    
+    #print(note_dict)
     lstm_input = []
     lstm_output = []
     
@@ -84,5 +108,5 @@ def prepare_notes():
     #one_hot_encoding lstm_ input
     lstm_output = to_categorical(lstm_output)
     
-    return lstm_input, lstm_output
+    return (lstm_input, lstm_output)
             
