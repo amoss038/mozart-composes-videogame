@@ -49,9 +49,9 @@ All of the models seems to have similar shortcomings and successes. For the most
 
 - Get more Data: Perhaps, more data would enable the network to generalize better. Perhaps, limit the data to a specific genre as well so that it doesn't get confused about how it interpets predictions.
 
--Transpose the songs: Perhaps, transposing each song to every key would enable the network to understand the note to note relationship better. However, this will explode the amount of data we have and increase compute time and the cost to train the model. 
+- Transpose the songs: Perhaps, transposing each song to every key would enable the network to understand the note to note relationship better. However, this will explode the amount of data we have and increase compute time and the cost to train the model. 
 
--How about a Transformer ? I have heard some great unique pieces of music created by Transformers. Perhaps, this type of architecture is better suited for this problem. Plus, it will significantly decrease our need for compute resources because Transformers are able to process the Data in parallel rather than linearly. 
+- How about a Transformer ? I have heard some great unique pieces of music created by Transformers. Perhaps, this type of architecture is better suited for this problem. Plus, it will significantly decrease our need for compute resources because Transformers are able to process the Data in parallel rather than linearly. 
 
 
 
