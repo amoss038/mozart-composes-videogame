@@ -41,7 +41,7 @@ I chose an LSTM (Long Short Term Memory) architecture rather than a RNN to deal 
 
 ## Results
 
-All of the models seems to have similar shortcomings and successes. For the most part the network is able to produce music, and make sense of basic music structure. And, there are different moments of brilliance scattereed throughout each generated piece of music where the model actually created a melodic sequence and some type of theme. However, all the models where unable to sustain said melody or general theme for longer periods of time. It seems as though the network gets confused about where to go after each sequence and loses it's ability to maintain momentum and structure. These results are promising and gives hope to the possibilities, but also highlights the fact that creating art through AI is a very difficult task.  
+All of the models seems to have similar shortcomings and successes. For the most part the network is able to produce music, and make sense of basic music structure. And, there are different moments of brilliance scattered throughout each generated piece of music where the model actually created a melodic sequence and some type of theme. However, all the models where unable to sustain said melody or general theme for longer periods of time. It seems as though the network gets confused about where to go after each sequence and loses it's ability to maintain momentum and structure. These results are promising and gives hope to the possibilities, but also highlights the fact that creating art through AI is a very difficult task.  
 
 -----------------------------------------------------------------------------------------------------------------------
 
